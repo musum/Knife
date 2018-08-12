@@ -1,4 +1,4 @@
-package com.secquan.ui;
+package com.cc.ui;
 //数据库配置窗口
 import java.awt.BorderLayout;
 import java.awt.Choice;
@@ -21,12 +21,12 @@ import java.util.regex.Pattern;
 
 import javax.swing.*;
 
-import com.secquan.ui.MainFrame;
-import com.secquan.ui.panel.DatabasePanel;
-import com.secquan.ui.panel.ListPanel;
-import com.secquan.util.DataBase;
-import com.secquan.util.DbDao;
-import com.secquan.util.GBC;
+import com.cc.ui.MainFrame;
+import com.cc.ui.panel.DatabasePanel;
+import com.cc.ui.panel.ListPanel;
+import com.cc.util.DataBase;
+import com.cc.util.DbDao;
+import com.cc.util.GBC;
 
 public class SetDBDialog extends JDialog {
 

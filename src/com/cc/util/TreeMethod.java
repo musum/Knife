@@ -1,4 +1,4 @@
-package com.secquan.util;
+package com.cc.util;
 
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -11,8 +11,8 @@ import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
 
-import com.secquan.ui.MainFrame;
-import com.secquan.ui.panel.FileManagerPanel;
+import com.cc.ui.MainFrame;
+import com.cc.ui.panel.FileManagerPanel;
 
 public class TreeMethod {
 

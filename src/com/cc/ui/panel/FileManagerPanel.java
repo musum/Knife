@@ -1,19 +1,19 @@
-package com.secquan.ui.panel;
+package com.cc.ui.panel;
 
-import com.secquan.model.ExtendedDefaultTreeCellRenderer;
-import com.secquan.model.ResultSetTableModel;
-import com.secquan.model.RightTableModel;
-import com.secquan.ui.MainFrame;
-import com.secquan.ui.MessageDialog;
-import com.secquan.ui.menu.FileManagerPopMenu;
-import com.secquan.ui.menu.FileManagerPopMenu.MouseAction;
-import com.secquan.ui.menu.FileManagerPopMenu.SelectedMouseAction;
-import com.secquan.util.Common;
-import com.secquan.util.DbDao;
-import com.secquan.util.FileManager;
-import com.secquan.util.GBC;
-import com.secquan.util.Safe;
-import com.secquan.util.TreeMethod;
+import com.cc.model.ExtendedDefaultTreeCellRenderer;
+import com.cc.model.ResultSetTableModel;
+import com.cc.model.RightTableModel;
+import com.cc.ui.MainFrame;
+import com.cc.ui.MessageDialog;
+import com.cc.ui.menu.FileManagerPopMenu;
+import com.cc.ui.menu.FileManagerPopMenu.MouseAction;
+import com.cc.ui.menu.FileManagerPopMenu.SelectedMouseAction;
+import com.cc.util.Common;
+import com.cc.util.DbDao;
+import com.cc.util.FileManager;
+import com.cc.util.GBC;
+import com.cc.util.Safe;
+import com.cc.util.TreeMethod;
 import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Text;
 
 import java.awt.Dimension;

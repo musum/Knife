@@ -1,4 +1,4 @@
-package com.secquan.model;
+package com.cc.model;
 
 import java.awt.Component;
 
@@ -7,8 +7,8 @@ import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
 
-import com.secquan.util.NodeData;
-import com.secquan.util.NodeData.DataType;
+import com.cc.util.NodeData;
+import com.cc.util.NodeData.DataType;
 
 
 

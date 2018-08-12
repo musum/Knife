@@ -1,4 +1,4 @@
-package com.secquan.model;
+package com.cc.model;
 
 import java.awt.Component;
 import java.awt.Graphics;

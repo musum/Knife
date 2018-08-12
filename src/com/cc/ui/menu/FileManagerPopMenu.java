@@ -1,4 +1,4 @@
-package com.secquan.ui.menu;
+package com.cc.ui.menu;
 
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
@@ -39,13 +39,13 @@ import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
 
-import com.secquan.model.RightTableModel;
-import com.secquan.ui.MainFrame;
-import com.secquan.ui.panel.FileManagerPanel;
-import com.secquan.ui.panel.TextPanel;
-import com.secquan.util.Common;
-import com.secquan.util.Safe;
-import com.secquan.util.TreeMethod;
+import com.cc.model.RightTableModel;
+import com.cc.ui.MainFrame;
+import com.cc.ui.panel.FileManagerPanel;
+import com.cc.ui.panel.TextPanel;
+import com.cc.util.Common;
+import com.cc.util.Safe;
+import com.cc.util.TreeMethod;
 
 public class FileManagerPopMenu extends JPopupMenu {
 	private JMenuItem upfile, downfile, openfile, rename, delete, addfile,

@@ -1,4 +1,4 @@
-package com.secquan.util;
+package com.cc.util;
 
 //数据库语句执行
 import java.io.UnsupportedEncodingException;

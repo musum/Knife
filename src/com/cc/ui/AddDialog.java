@@ -1,4 +1,4 @@
-package com.secquan.ui;
+package com.cc.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -25,10 +25,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import com.secquan.ui.panel.ListPanel;
-import com.secquan.util.DbDao;
-import com.secquan.util.InitConfig;
-import com.secquan.util.SymmetricEncoder;
+import com.cc.ui.panel.ListPanel;
+import com.cc.util.DbDao;
+import com.cc.util.InitConfig;
+import com.cc.util.SymmetricEncoder;
 
 public class AddDialog extends JDialog {
 	private String id,ip,time;

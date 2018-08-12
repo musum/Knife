@@ -1,4 +1,4 @@
-package com.secquan.ui;
+package com.cc.ui;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -13,7 +13,7 @@ import javax.swing.*;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 
-import com.secquan.util.GBC;
+import com.cc.util.GBC;
 
 public class AboutDialog extends JDialog {
 	private JPanel about_pane;

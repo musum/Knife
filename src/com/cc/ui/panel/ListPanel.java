@@ -1,4 +1,4 @@
-package com.secquan.ui.panel;
+package com.cc.ui.panel;
 
 import java.awt.GridBagLayout;
 import java.sql.ResultSet;
@@ -14,11 +14,11 @@ import javax.swing.JToolBar;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
 
-import com.secquan.model.ResultSetTableModel;
-import com.secquan.ui.menu.ListPopMenu;
-import com.secquan.util.DbDao;
-import com.secquan.util.GBC;
-import com.secquan.util.InitConfig;
+import com.cc.model.ResultSetTableModel;
+import com.cc.ui.menu.ListPopMenu;
+import com.cc.util.DbDao;
+import com.cc.util.GBC;
+import com.cc.util.InitConfig;
 
 public class ListPanel extends JPanel {
 	private JTable list;

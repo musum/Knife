@@ -1,4 +1,4 @@
-package com.secquan.util;
+package com.cc.util;
 
 public final class Safe {
 	public static String SPL;

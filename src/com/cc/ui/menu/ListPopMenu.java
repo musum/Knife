@@ -1,4 +1,4 @@
-package com.secquan.ui.menu;
+package com.cc.ui.menu;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,13 +26,13 @@ import javax.swing.UnsupportedLookAndFeelException;
 import sun.awt.windows.ThemeReader;
 import sun.swing.SwingUtilities2;
 
-import com.secquan.ui.AboutDialog;
-import com.secquan.ui.AddDialog;
-import com.secquan.ui.ConfigDialog;
-import com.secquan.ui.MainFrame;
-import com.secquan.ui.panel.ListPanel;
-import com.secquan.util.Configuration;
-import com.secquan.util.DbDao;
+import com.cc.ui.AboutDialog;
+import com.cc.ui.AddDialog;
+import com.cc.ui.ConfigDialog;
+import com.cc.ui.MainFrame;
+import com.cc.ui.panel.ListPanel;
+import com.cc.util.Configuration;
+import com.cc.util.DbDao;
 
 public class ListPopMenu extends JPopupMenu {
 	private JScrollPane listPane;

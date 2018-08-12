@@ -1,4 +1,4 @@
-package com.secquan.ui;
+package com.cc.ui;
 
 import java.awt.Dimension;
 import java.awt.Rectangle;
@@ -24,10 +24,10 @@ import javax.swing.JTextPane;
 import javax.swing.text.DefaultCaret;
 import javax.swing.text.Document;
 
-import com.secquan.ui.panel.ListPanel;
-import com.secquan.util.DbDao;
-import com.secquan.util.HttpRequestUtil;
-import com.secquan.util.ReadFromFile;
+import com.cc.ui.panel.ListPanel;
+import com.cc.util.DbDao;
+import com.cc.util.HttpRequestUtil;
+import com.cc.util.ReadFromFile;
 
 public class ForceShellPanel extends JPanel {
 	private static JTextField urlPath;

@@ -1,4 +1,4 @@
-package com.secquan.model;
+package com.cc.model;
 
 import javax.swing.table.DefaultTableModel;
 

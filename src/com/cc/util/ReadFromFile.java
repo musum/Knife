@@ -1,4 +1,4 @@
-package com.secquan.util;
+package com.cc.util;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -12,7 +12,7 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.secquan.ui.ForceShellPanel;
+import com.cc.ui.ForceShellPanel;
 
 /**
  * 读取文件util

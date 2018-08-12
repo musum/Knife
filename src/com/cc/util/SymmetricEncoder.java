@@ -1,4 +1,4 @@
-package com.secquan.util;
+package com.cc.util;
 
 
 import java.io.IOException;
@@ -16,8 +16,9 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
+//import sun.misc.BASE64Decoder;
+//import sun.misc.BASE64Encoder;
+import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 
 /*
  * AES对称加密和解密
@@ -59,7 +60,8 @@ public class SymmetricEncoder {
             //这里用Base64Encoder中会找不到包
             //解决办法：
             //在项目的Build path中先移除JRE System Library，再添加库JRE System Library，重新编译后就一切正常了。
-            String AES_encode=new String(new BASE64Encoder().encode(byte_AES));
+//            String AES_encode=new String(new BASE64Encoder().encode(byte_AES));
+            String AES_encode=new String(Base64.encode(byte_AES));
           //11.将字符串返回
             return AES_encode;
         } catch (NoSuchAlgorithmException e) {
@@ -106,7 +108,7 @@ public class SymmetricEncoder {
               //7.初始化密码器，第一个参数为加密(Encrypt_mode)或者解密(Decrypt_mode)操作，第二个参数为使用的KEY
             cipher.init(Cipher.DECRYPT_MODE, key);
             //8.将加密并编码后的内容解码成字节数组
-            byte [] byte_content= new BASE64Decoder().decodeBuffer(content);
+            byte [] byte_content= Base64.decode(content);
             /*
              * 解密
              */

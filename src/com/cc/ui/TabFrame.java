@@ -1,16 +1,13 @@
-package com.secquan.ui;
-
-
-
+package com.cc.ui;
 
 import javax.swing.*;
 
-import com.secquan.ui.panel.DatabasePanel;
-import com.secquan.ui.panel.FileManagerPanel;
-import com.secquan.ui.panel.HeadPanel;
-import com.secquan.ui.panel.ListPanel;
-import com.secquan.ui.panel.ShellPanel;
-import com.secquan.ui.panel.TextPanel;
+import com.cc.ui.panel.DatabasePanel;
+import com.cc.ui.panel.FileManagerPanel;
+import com.cc.ui.panel.HeadPanel;
+import com.cc.ui.panel.ListPanel;
+import com.cc.ui.panel.ShellPanel;
+import com.cc.ui.panel.TextPanel;
 
 public class TabFrame extends JTabbedPane {
 	private ListPanel list;

@@ -1,4 +1,4 @@
-package com.secquan.ui.config.panel;
+package com.cc.ui.config.panel;
 
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
@@ -12,11 +12,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import com.secquan.ui.ConfigDialog;
-import com.secquan.util.Common;
-import com.secquan.util.Configuration;
-import com.secquan.util.GBC;
-import com.secquan.util.Safe;
+import com.cc.ui.ConfigDialog;
+import com.cc.util.Common;
+import com.cc.util.Configuration;
+import com.cc.util.GBC;
+import com.cc.util.Safe;
 
 public class ProxyPanel extends JPanel{
 	private JTextField host;

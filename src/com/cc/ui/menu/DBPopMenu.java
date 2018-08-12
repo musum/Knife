@@ -1,4 +1,4 @@
-package com.secquan.ui.menu;
+package com.cc.ui.menu;
 //数据库列表右键菜单
 
 import java.awt.Component;
@@ -32,15 +32,15 @@ import javax.swing.tree.MutableTreeNode;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 
-import com.secquan.model.DatabaseTableModel;
-import com.secquan.ui.MainFrame;
-import com.secquan.ui.panel.DatabasePanel;
-import com.secquan.ui.panel.FileManagerPanel;
-import com.secquan.util.DataBase;
-import com.secquan.util.NodeData;
-import com.secquan.util.Safe;
-import com.secquan.util.TreeMethod;
-import com.secquan.util.NodeData.DataType;
+import com.cc.model.DatabaseTableModel;
+import com.cc.ui.MainFrame;
+import com.cc.ui.panel.DatabasePanel;
+import com.cc.ui.panel.FileManagerPanel;
+import com.cc.util.DataBase;
+import com.cc.util.NodeData;
+import com.cc.util.Safe;
+import com.cc.util.TreeMethod;
+import com.cc.util.NodeData.DataType;
 
 public class DBPopMenu extends JPopupMenu {
 

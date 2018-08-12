@@ -1,4 +1,4 @@
-package com.secquan.ui;
+package com.cc.ui;
 
 import java.awt.EventQueue;
 
@@ -11,8 +11,8 @@ import org.pushingpixels.substance.internal.fonts.DefaultGnomeFontPolicy;
 import org.pushingpixels.substance.internal.fonts.DefaultKDEFontPolicy;
 import org.pushingpixels.substance.internal.fonts.DefaultMacFontPolicy;
 
-import com.secquan.util.Configuration;
-import com.secquan.util.InitConfig;
+import com.cc.util.Configuration;
+import com.cc.util.InitConfig;
 
 public class Cknife {
 	public static void main(String[] args) {

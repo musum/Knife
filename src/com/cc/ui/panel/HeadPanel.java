@@ -1,4 +1,4 @@
-package com.secquan.ui.panel;
+package com.cc.ui.panel;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -15,7 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-import com.secquan.ui.MainFrame;
+import com.cc.ui.MainFrame;
 
 public class HeadPanel extends JPanel {
 	private JLabel tabclose;

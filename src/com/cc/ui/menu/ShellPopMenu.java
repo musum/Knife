@@ -1,4 +1,4 @@
-package com.secquan.ui.menu;
+package com.cc.ui.menu;
 
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
@@ -15,7 +15,7 @@ import javax.swing.*;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 
-import com.secquan.ui.MainFrame;
+import com.cc.ui.MainFrame;
 
 public class ShellPopMenu {
 

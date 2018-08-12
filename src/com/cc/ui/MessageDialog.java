@@ -1,4 +1,4 @@
-package com.secquan.ui;
+package com.cc.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;

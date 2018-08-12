@@ -1,4 +1,4 @@
-package com.secquan.model;
+package com.cc.model;
 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -8,8 +8,8 @@ import java.util.Vector;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
 
-import com.secquan.util.InitConfig;
-import com.secquan.util.SymmetricEncoder;
+import com.cc.util.InitConfig;
+import com.cc.util.SymmetricEncoder;
 /*
  * 通过重写方法实现直接读取数据并显示在表格
  * 继承AbstractTableModel没有add,remove等方法

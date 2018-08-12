@@ -1,4 +1,4 @@
-package com.secquan.ui.panel;
+package com.cc.ui.panel;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -13,12 +13,12 @@ import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 
-import com.secquan.ui.MainFrame;
-import com.secquan.ui.MessageDialog;
-import com.secquan.ui.menu.ShellPopMenu;
-import com.secquan.util.GBC;
-import com.secquan.util.Safe;
-import com.secquan.util.Shell;
+import com.cc.ui.MainFrame;
+import com.cc.ui.MessageDialog;
+import com.cc.ui.menu.ShellPopMenu;
+import com.cc.util.GBC;
+import com.cc.util.Safe;
+import com.cc.util.Shell;
 
 public class ShellPanel extends JPanel {
 

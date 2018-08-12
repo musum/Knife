@@ -1,4 +1,4 @@
-package com.secquan.ui.config.panel;
+package com.cc.ui.config.panel;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -13,11 +13,11 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 
-import com.secquan.ui.ConfigDialog;
-import com.secquan.ui.MainFrame;
-import com.secquan.util.Common;
-import com.secquan.util.Configuration;
-import com.secquan.util.Safe;
+import com.cc.ui.ConfigDialog;
+import com.cc.ui.MainFrame;
+import com.cc.util.Common;
+import com.cc.util.Configuration;
+import com.cc.util.Safe;
 
 public class RequestPanel extends JPanel{
 	private JTextPane content;

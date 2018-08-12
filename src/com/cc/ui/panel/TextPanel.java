@@ -1,4 +1,4 @@
-package com.secquan.ui.panel;
+package com.cc.ui.panel;
 
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
@@ -13,10 +13,10 @@ import javax.swing.JTextPane;
 import javax.swing.JToolBar;
 import javax.swing.SwingUtilities;
 
-import com.secquan.ui.MainFrame;
-import com.secquan.util.Common;
-import com.secquan.util.GBC;
-import com.secquan.util.Safe;
+import com.cc.ui.MainFrame;
+import com.cc.util.Common;
+import com.cc.util.GBC;
+import com.cc.util.Safe;
 
 public class TextPanel extends JPanel {
 	private FileManagerPanel filemanagerpanel;

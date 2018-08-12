@@ -1,4 +1,4 @@
-package com.secquan.util;
+package com.cc.util;
 
 import java.awt.Color;
 import java.io.UnsupportedEncodingException;

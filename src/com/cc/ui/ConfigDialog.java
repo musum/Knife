@@ -1,4 +1,4 @@
-package com.secquan.ui;
+package com.cc.ui;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -7,8 +7,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JTabbedPane;
 
-import com.secquan.ui.config.panel.ProxyPanel;
-import com.secquan.ui.config.panel.RequestPanel;
+import com.cc.ui.config.panel.ProxyPanel;
+import com.cc.ui.config.panel.RequestPanel;
 
 public class ConfigDialog extends JDialog{
 	public static ConfigDialog cdialog;

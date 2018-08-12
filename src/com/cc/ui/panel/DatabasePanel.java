@@ -1,17 +1,17 @@
-package com.secquan.ui.panel;
+package com.cc.ui.panel;
 //数据库界面
-import com.secquan.model.DatabaseTableModel;
-import com.secquan.model.DatabaseTreeCellRenderer;
-import com.secquan.ui.MainFrame;
-import com.secquan.ui.MessageDialog;
-import com.secquan.ui.SetDBDialog;
-import com.secquan.ui.menu.DBPopMenu;
-import com.secquan.util.Common;
-import com.secquan.util.DataBase;
-import com.secquan.util.GBC;
-import com.secquan.util.NodeData;
-import com.secquan.util.Safe;
-import com.secquan.util.NodeData.DataType;
+import com.cc.model.DatabaseTableModel;
+import com.cc.model.DatabaseTreeCellRenderer;
+import com.cc.ui.MainFrame;
+import com.cc.ui.MessageDialog;
+import com.cc.ui.SetDBDialog;
+import com.cc.ui.menu.DBPopMenu;
+import com.cc.util.Common;
+import com.cc.util.DataBase;
+import com.cc.util.GBC;
+import com.cc.util.NodeData;
+import com.cc.util.Safe;
+import com.cc.util.NodeData.DataType;
 
 import java.awt.Component;
 import java.awt.Dimension;
