@@ -291,7 +291,7 @@ public class FileManagerPopMenu extends JPopupMenu {
 			case "文件夹":
 				Vector vector = new Vector<>();
 				vector.add(new ImageIcon(getClass().getResource(
-						"/com/secquan/images/folder.png")));
+						"/com/cc/images/folder.png")));
 				vector.add("newFolder");
 				vector.add(Common.getTime());
 				vector.add("0");

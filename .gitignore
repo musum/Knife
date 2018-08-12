@@ -4,5 +4,4 @@ out/
 .myeclipse/
 .idea
 *.db
-*.ini
 META-INF/

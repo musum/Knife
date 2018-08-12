@@ -44,7 +44,7 @@ public class AboutDialog extends JDialog {
 		img_label = new JLabel();
 
 		try {
-			icon = new ImageIcon(getClass().getResource("/com/secquan/images/logos.png"));
+			icon = new ImageIcon(getClass().getResource("/com/cc/images/logos.png"));
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}

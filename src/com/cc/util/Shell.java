@@ -354,8 +354,8 @@ public class Shell {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		String[] index_datas = Common.send(url, params, code).split("\t");
-		String webroot = index_datas[0];
+		String index_datas = Common.send(url, params, code);
+		String webroot = index_datas.split("\t")[0];
 		pa = webroot;
 		if (webroot.contains(":")) // windows系统
 		{
@@ -386,7 +386,7 @@ public class Shell {
 		SimpleAttributeSet a = new SimpleAttributeSet();
 		StyleConstants.setForeground(a, Color.WHITE);
 		StyleConstants.setFontSize(a, 10);
-		return pa;
+		return index_datas;
 
 	}
 

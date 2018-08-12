@@ -370,7 +370,7 @@ public class DBPopMenu extends JPopupMenu {
 				Vector<Object> vector = new Vector<Object>();
 				for (int m = 0; m < cols.length; m++) {
 					if (m == 0) {
-						vector.add(new ImageIcon(getClass().getResource("/com/secquan/images/data.png")));
+						vector.add(new ImageIcon(getClass().getResource("/com/cc/images/data.png")));
 					}
 					vector.add(cols[m].replace("\t", ""));
 
@@ -452,7 +452,7 @@ public class DBPopMenu extends JPopupMenu {
 				Vector<Object> vector = new Vector<Object>();
 				for (int m = 0; m < columns; m++) {
 					if (m == 0) {
-						vector.add(new ImageIcon("".getClass().getResource("/com/secquan/images/data.png")));
+						vector.add(new ImageIcon("".getClass().getResource("/com/cc/images/data.png")));
 					}
 					// 添加到向量vector中，后续加入到table里面显示
 					vector.add(cols[m].replace("\t", ""));

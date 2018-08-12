@@ -41,11 +41,11 @@ public class ExtendedTreeCellRenderer extends JPanel implements TreeCellRenderer
 //		g.setColor(fore);
 		if(name.equals("/"))
 		{
-			g.drawImage(new ImageIcon(getClass().getResource("/com/secquan/images/drive.png")).getImage(),1,2,null);
+			g.drawImage(new ImageIcon(getClass().getResource("/com/cc/images/drive.png")).getImage(),1,2,null);
 
 		}else 
 		{
-			g.drawImage(new ImageIcon(getClass().getResource("/com/secquan/images/folder.png")).getImage(),1,2,null);
+			g.drawImage(new ImageIcon(getClass().getResource("/com/cc/images/folder.png")).getImage(),1,2,null);
 		}
 		
 		g.drawString(this.name,20,14);

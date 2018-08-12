@@ -76,7 +76,7 @@ public class RightTableModel extends AbstractTableModel {
 				if (name.charAt(s[0].length() - 1) == '/') {
 					// data.add("isdict");
 					data.add(new ImageIcon(getClass().getResource(
-							"/com/secquan/images/folder.png")));
+							"/com/cc/images/folder.png")));
 					data.add(name.substring(0, name.length() - 1));
 					data.add(s[1]);
 					data.add(s[2]);
@@ -84,7 +84,7 @@ public class RightTableModel extends AbstractTableModel {
 				} else {
 					// data.add("isfile");
 					data.add(new ImageIcon(getClass().getResource(
-							"/com/secquan/images/file.png")));
+							"/com/cc/images/file.png")));
 					data.add(name);
 					data.add(s[1]);
 					data.add(s[2]);

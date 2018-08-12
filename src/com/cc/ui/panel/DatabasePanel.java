@@ -479,7 +479,7 @@ public class DatabasePanel extends JPanel {
 				Vector<Object> vector = new Vector<Object>();
 				for (int m = 0; m < cols.length; m++) {
 					if (m == 0) {
-						vector.add(new ImageIcon(getClass().getResource("/com/secquan/images/data.png")));
+						vector.add(new ImageIcon(getClass().getResource("/com/cc/images/data.png")));
 					}
 					vector.add(cols[m].replace("\t", ""));
 

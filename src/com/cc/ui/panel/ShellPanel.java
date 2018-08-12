@@ -98,7 +98,10 @@ public class ShellPanel extends JPanel {
 		Thread thread_getpath = new Thread(new Runnable() {
 			public void run() {
 				// 显示网站路径
-				path = core.GetPath();
+				String info = core.GetPath();
+				path = info.split("\t")[0];
+				String banner = info.split("\t")[-1];
+				output(banner);
 				check_path();
 				final String tmp = path.substring(0, path.length() - 1);
 				SwingUtilities.invokeLater(new Runnable() {
@@ -107,10 +110,11 @@ public class ShellPanel extends JPanel {
 							new MessageDialog(tmp, 5);
 							console.setEnabled(false);
 						} else {
-							try {
-								shell_doc.insertString(shell_doc.getLength(), "\n" + path_show, null);
-							} catch (BadLocationException e) {
-							}
+//							try {
+//								shell_doc.insertString(shell_doc.getLength(), "\n" + path_show, null);
+//							} catch (BadLocationException e) {
+//							}
+							output(path_show);
 						}
 						command_start = shell_doc.getLength();
 						console.setCaretPosition(shell_doc.getLength());
@@ -161,6 +165,13 @@ public class ShellPanel extends JPanel {
 		shell_font = new Font("幼圆", Font.BOLD, 12);
 		console.setFont(new Font("幼圆", Font.BOLD, 12));
 		command_start = shell_doc.getLength();
+	}
+
+	public void output(String text) {
+		try {
+			shell_doc.insertString(shell_doc.getLength(), text + "\n", null);
+		} catch (BadLocationException e) {
+		}
 	}
 
 	// 路径path

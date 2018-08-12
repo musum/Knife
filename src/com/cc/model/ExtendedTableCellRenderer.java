@@ -30,10 +30,10 @@ public class ExtendedTableCellRenderer extends JPanel implements TableCellRender
 		// TODO Auto-generated method stub
 		if(this.name.equals("isdict"))
 		{
-			g.drawImage(new ImageIcon(getClass().getResource("/com/secquan/images/folder.png")).getImage(),0,0,null);
+			g.drawImage(new ImageIcon(getClass().getResource("/com/cc/images/folder.png")).getImage(),0,0,null);
 		}else
 		{
-			g.drawImage(new ImageIcon(getClass().getResource("/com/secquan/images/file.png")).getImage(),0,0,null);
+			g.drawImage(new ImageIcon(getClass().getResource("/com/cc/images/file.png")).getImage(),0,0,null);
 		}
 	}
 }

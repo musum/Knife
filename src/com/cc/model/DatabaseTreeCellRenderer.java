@@ -26,10 +26,10 @@ public class DatabaseTreeCellRenderer extends DefaultTreeCellRenderer {
 		ImageIcon icon = null;
 		switch (data.nodetype) {
 		case DataType.DATABASE:
-			icon = new ImageIcon(getClass().getResource("/com/secquan/images/database.png"));
+			icon = new ImageIcon(getClass().getResource("/com/cc/images/database.png"));
 			break;
 		case DataType.TABLE:
-			icon = new ImageIcon(getClass().getResource("/com/secquan/images/table.png"));
+			icon = new ImageIcon(getClass().getResource("/com/cc/images/table.png"));
 			break;
 		}
 		this.setIcon(icon);

@@ -215,7 +215,8 @@ public class HttpRequestUtil {
 //    	System.out.println(s);
 //        System.out.println("==============");
 //        //发送 POST 请求
-        String sr=HttpRequestUtil.sendPost("http://192.168.1.70:811/test/a.asp", "Cknife=response.write(\"password is :Cknife1\");");
-        System.out.println(sr);
+//        String sr=HttpRequestUtil.sendPost("http://192.168.1.70:811/test/a.asp", "Cknife=response.write(\"password is :Cknife1\");");
+//        System.out.println(sr);
+        System.out.println("Hello");
     }
 }

@@ -29,10 +29,10 @@ public class ExtendedDefaultTreeCellRenderer extends DefaultTreeCellRenderer
 		}
 		if(df.getUserObject().equals("/") || al.contains(df.getUserObject()))
 		{
-			this.setIcon(new ImageIcon(getClass().getResource("/com/secquan/images/drive.png")));
+			this.setIcon(new ImageIcon(getClass().getResource("/com/cc/images/drive.png")));
 		} else 
 		{
-			this.setIcon(new ImageIcon(getClass().getResource("/com/secquan/images/folder.png")));
+			this.setIcon(new ImageIcon(getClass().getResource("/com/cc/images/folder.png")));
 		}
 		return this;
 	}

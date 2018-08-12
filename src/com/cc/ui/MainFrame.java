@@ -12,7 +12,7 @@ public class MainFrame {
 		Toolkit t = Toolkit.getDefaultToolkit();
 		Dimension d = t.getScreenSize();
 		main = new JFrame("圈子版--菜刀1.6");
-		main.setIconImage(new ImageIcon(getClass().getResource("/com/secquan/images/logos.png")).getImage());
+		main.setIconImage(new ImageIcon(getClass().getResource("/com/cc/images/logos.png")).getImage());
 		main.setSize(900, 480);
 		main.setLocation((d.width - main.getWidth()) / 2,
 				(d.height - main.getHeight()) / 2);
