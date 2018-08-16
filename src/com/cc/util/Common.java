@@ -62,6 +62,19 @@ public class Common {
 		return params;
 	}
 
+	public static String makeCustom(String... args) {
+		String params = "";
+		if (args.length == 1) {
+			params = Safe.PASS + "=" + args[0] ;
+		} else if (args.length == 2) {
+			params = Safe.PASS + "=" + args[0] + "&" + Safe.PARAM1 + "=" + args[1];
+		} else if (args.length == 3) {
+			params = Safe.PASS + "=" + args[0] + "&" + Safe.PARAM1 + "=" + args[1] + "&"
+					+ Safe.PARAM2 + "=" + args[2];
+		}
+		return params;
+	}
+
 	public static String getAbsolutePath(String path) {
 		int pos = path.lastIndexOf(Safe.SYSTEMSP);
 		return path.substring(0, pos + 1);

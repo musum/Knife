@@ -177,6 +177,7 @@ public class InitConfig {
 		Safe.SPR = config.getValue("SPR");
 		Safe.CODE = config.getValue("CODE");
 		Safe.ACTION = config.getValue("ACTION");
+		Safe.PARAM0 = config.getValue("PARAM0");
 		Safe.PARAM1 = config.getValue("PARAM1");
 		Safe.PARAM2 = config.getValue("PARAM2");
 		Safe.PARAM3 = config.getValue("PARAM3");

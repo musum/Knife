@@ -5,6 +5,7 @@ public final class Safe {
 	public static String SPR;
 	public static String CODE;
 	public static String ACTION;
+	public static String PARAM0;
 	public static String PARAM1;
 	public static String PARAM2;
 	public static String PARAM3;

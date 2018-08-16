@@ -98,10 +98,9 @@ public class ShellPanel extends JPanel {
 		Thread thread_getpath = new Thread(new Runnable() {
 			public void run() {
 				// 显示网站路径
-				String info = core.GetPath();
-				path = info.split("\t")[0];
-				String banner = info.split("\t")[-1];
-				output(banner);
+				String[] info = core.GetPath().split("\t");
+				path = info[0].replace("\r|\n", "");
+				String banner = info[info.length - 1].trim();
 				check_path();
 				final String tmp = path.substring(0, path.length() - 1);
 				SwingUtilities.invokeLater(new Runnable() {
@@ -113,12 +112,14 @@ public class ShellPanel extends JPanel {
 //							try {
 //								shell_doc.insertString(shell_doc.getLength(), "\n" + path_show, null);
 //							} catch (BadLocationException e) {
+//                                e.printStackTrace();
 //							}
+                            output("INFO: [" + banner + "]\n");
 							output(path_show);
 						}
-						command_start = shell_doc.getLength();
-						console.setCaretPosition(shell_doc.getLength());
-						status.setText("完成");
+//						command_start = shell_doc.getLength();
+//						console.setCaretPosition(shell_doc.getLength());
+//						status.setText("完成");
 					}
 				});
 
@@ -169,8 +170,13 @@ public class ShellPanel extends JPanel {
 
 	public void output(String text) {
 		try {
-			shell_doc.insertString(shell_doc.getLength(), text + "\n", null);
+			shell_doc.insertString(shell_doc.getLength(), text, null);
+			command_start = shell_doc.getLength();
+            console.setCaretPosition(shell_doc.getLength());
+            status.setText("完成");
 		} catch (BadLocationException e) {
+			e.printStackTrace();
+            status.setText("失败");
 		}
 	}
 

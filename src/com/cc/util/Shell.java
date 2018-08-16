@@ -253,11 +253,16 @@ public class Shell {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
 		}
-		params = Common.makeParams(Safe.JSP_MAKE, Safe.JSP_SHELL, tmp);
-		params = params + "&code=" + code;
+//		params = Common.makeParams(Safe.JSP_MAKE, Safe.JSP_SHELL, tmp);
+		params = Common.makeCustom(Safe.JSP_SHELL, tmp);
+//		params = params + "&code=" + code;
+		params = params + "&"+Safe.PARAM0+"="+code;
 		String[] index_datas = Common.send(url, params, code).split("\t");
 		String result = null;
 		result = Arrays.toString(index_datas);
+		if (result.indexOf("[") < 0) {
+			re[0] = result;
+		}else
 		re[0] = result.substring(result.indexOf("[") + 1, result.indexOf("[S]"));
 		if(result.indexOf("[E]")+3<(result.length()-1))
 		{
@@ -290,7 +295,8 @@ public class Shell {
 		z2 = z2.replace("\n", "");
 		z2 = z2.replace("\r", "");
 		//params = Common.makeParams(Safe.CUS_MAKE, Safe.CUS_SHELL,URLEncoder.encode(z1),URLEncoder.encode(z2),URLEncoder.encode(pa));
-		params = Safe.PASS+"=1&"+Safe.ACTION+"="+Safe.CUS_SHELL+"&"+Safe.PARAM1+"="+URLEncoder.encode(z1)+"&"+Safe.PARAM2+"="
+//		params = Safe.PASS+"=1&"+Safe.ACTION+"="+Safe.CUS_SHELL+"&"+Safe.PARAM1+"="+URLEncoder.encode(z1)+"&"+Safe.PARAM2+"="
+		params = Safe.PASS+"="+Safe.CUS_SHELL+"&"+Safe.PARAM1+"="+URLEncoder.encode(z1)+"&"+Safe.PARAM2+"="
 		+URLEncoder.encode(z2)+"&"+Safe.PARAM3+"="+URLEncoder.encode(pa);
 		String[] index_datas = Common.send(url, params, code).split("\t");
 		String result = Arrays.toString(index_datas);
@@ -326,7 +332,8 @@ public class Shell {
 		try {
 			switch (type) {
 			case 0:
-				params = Common.makeParams(Safe.JSP_MAKE, Safe.JSP_INDEX) + "&code=" + this.code;
+//				params = Common.makeParams(Safe.JSP_MAKE, Safe.JSP_INDEX) + "&code=" + this.code;
+				params = Common.makeCustom(Safe.JSP_INDEX) + "&" + Safe.PARAM0 + "=" + this.code;
 				break;
 			case 1:
 				params = Common.makeParams(Safe.PHP_MAKE, Safe.PHP_INDEX);
