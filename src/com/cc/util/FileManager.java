@@ -385,39 +385,39 @@ public class FileManager {
 			switch (action) {
 			case "readindex":
 //				params = Common.makeParams(Safe.CUS_MAKE, Safe.CUS_INDEX);
-				params = Common.makeCustom(Safe.CUS_INDEX);
+				params = Common.makeCustom(Safe.CUS_INDEX)+"&"+Safe.PARAM0+"="+this.code;
 				break;
 			case "readdict":
 //				params = Common.makeParams(Safe.CUS_MAKE, Safe.CUS_READDICT,this.makeParam1(path));
-				params = Common.makeCustom(Safe.CUS_READDICT,this.makeParam1(path));
+				params = Common.makeCustom(Safe.CUS_READDICT,this.makeParam1(path))+"&"+Safe.PARAM0+"="+this.code;
 				break;
 			case "readfile":
 //				params = Common.makeParams(Safe.CUS_MAKE, Safe.CUS_READFILE,this.makeParam1(path));
-				params = Common.makeCustom(Safe.CUS_READFILE,this.makeParam1(path));
+				params = Common.makeCustom(Safe.CUS_READFILE,this.makeParam1(path))+"&"+Safe.PARAM0+"="+this.code;
 				break;
 			case "savefile":
 //				params = Common.makeParams(Safe.CUS_MAKE, Safe.CUS_SAVEFILE,this.makeParam1(path),this.makeParam2(data));
-				params = Common.makeCustom(Safe.CUS_SAVEFILE,this.makeParam1(path),this.makeParam2(data));
+				params = Common.makeCustom(Safe.CUS_SAVEFILE,this.makeParam1(path),this.makeParam2(data))+"&"+Safe.PARAM0+"="+this.code;
 				break;
 			case "delete":
 //				params = Common.makeParams(Safe.CUS_MAKE, Safe.CUS_DELETE,this.makeParam1(path));
-				params = Common.makeCustom(Safe.CUS_DELETE,this.makeParam1(path));
+				params = Common.makeCustom(Safe.CUS_DELETE,this.makeParam1(path))+"&"+Safe.PARAM0+"="+this.code;
 				break;
 			case "rename":
 //				params = Common.makeParams(Safe.CUS_MAKE, Safe.CUS_RENAME,this.makeParam1(path),this.makeParam2(data));
-				params = Common.makeCustom(Safe.CUS_RENAME,this.makeParam1(path),this.makeParam2(data));
+				params = Common.makeCustom(Safe.CUS_RENAME,this.makeParam1(path),this.makeParam2(data))+"&"+Safe.PARAM0+"="+this.code;
 				break;
 			case "retime":
 //				params = Common.makeParams(Safe.CUS_MAKE, Safe.CUS_RETIME,this.makeParam1(path),this.makeParam2(data));
-				params = Common.makeCustom(Safe.CUS_RETIME,this.makeParam1(path),this.makeParam2(data));
+				params = Common.makeCustom(Safe.CUS_RETIME,this.makeParam1(path),this.makeParam2(data))+"&"+Safe.PARAM0+"="+this.code;
 				break;
 			case "newdict":
 //				params = Common.makeParams(Safe.CUS_MAKE, Safe.CUS_NEWDICT,this.makeParam1(path));
-				params = Common.makeCustom(Safe.CUS_NEWDICT,this.makeParam1(path));
+				params = Common.makeCustom(Safe.CUS_NEWDICT,this.makeParam1(path))+"&"+Safe.PARAM0+"="+this.code;
 				break;
 			case "upload":
 //				params = Common.makeParams(Safe.CUS_MAKE, Safe.CUS_UPLOAD,this.makeParam1(path),this.makeParam2(data));
-				params = Common.makeCustom(Safe.CUS_UPLOAD,this.makeParam1(path),this.makeParam2(data));
+				params = Common.makeCustom(Safe.CUS_UPLOAD,this.makeParam1(path),this.makeParam2(data))+"&"+Safe.PARAM0+"="+this.code;
 				break;
 			}
 			break;

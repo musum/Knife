@@ -82,9 +82,9 @@ public class DatabasePanel extends JPanel {
 	private void setComponent() {
 
 		// Label 显示
-		status = new JLabel("状态栏");
-		selectdb = new JLabel("数据库");
-		sql_list = new JLabel("常用SQL语句");
+		status = new JLabel("StatusBar");
+		selectdb = new JLabel("Database");
+		sql_list = new JLabel("Common SQL");
 
 		// 数据库jtree
 		dblist = new JTree();
@@ -120,12 +120,12 @@ public class DatabasePanel extends JPanel {
 		commonsql.addActionListener(aListener);
 
 		// 数据库配置按钮
-		dbset = new JButton("数据库配置");
+		dbset = new JButton("Config");
 		OpenDBDialog action = new OpenDBDialog();
 		dbset.addActionListener(action);
 
 		// sql命令执行
-		exec = new JButton("执行SQL(Ctrl+回车)");
+		exec = new JButton("Excute(Ctrl+Enter)");
 		Exec execation = new Exec();
 		exec.addActionListener(execation);
 
@@ -272,7 +272,7 @@ public class DatabasePanel extends JPanel {
 
 					if (e.getClickCount() == 2 && ddd.getChildCount() == 0) // 判断双击
 					{
-						status.setText("正在查询...请稍等");
+						status.setText("Querying...");
 						dbn = GetSelectDB();
 						tmp_sql_str = "select * from "
 								+ dblist.getLastSelectedPathComponent().toString().replace("\t", "");
@@ -289,7 +289,7 @@ public class DatabasePanel extends JPanel {
 									DBPopMenu.showtable();
 									dblist.expandRow(dblist.getLeadSelectionRow());
 									t_locker = 0;
-									status.setText("执行完毕");
+									status.setText("Finished");
 								} catch (Exception e) {			
 									t_locker = 0;
 								}
@@ -299,13 +299,13 @@ public class DatabasePanel extends JPanel {
 						if (t_locker == 0) {
 							t_locker = 1;
 							if (config.equals("")) {
-								status.setText("请先配置数据库");
+								status.setText("Config database first");
 								t_locker = 0;
 							} else {
 								showtb.start();
 							}
 						} else {
-							status.setText("上一操作尚未执行完毕");
+							status.setText("Last operation is no finished");
 						}
 
 					}
@@ -359,7 +359,7 @@ public class DatabasePanel extends JPanel {
 			private String re = "";
 
 			public void run() {
-				status.setText("正在读取...请稍等");
+				status.setText("Get data...");
 				try {
 					re = DataBase.exec_sql(url, pass, config, type, code, tmp_sql_str, dbn);
 					SwingUtilities.invokeLater(new Runnable() {
@@ -368,7 +368,7 @@ public class DatabasePanel extends JPanel {
 								UpdateData(re);
 							} catch (Exception e) {
 							}
-							status.setText("完成");
+							status.setText("Finished");
 							t_locker = 0;
 						}
 					});
@@ -383,13 +383,13 @@ public class DatabasePanel extends JPanel {
 		if (t_locker == 0) {
 			t_locker = 1;
 			if (config.equals("")) {
-				status.setText("请先配置数据库");
+				status.setText("Config database first");
 				t_locker = 0;
 			} else {
 				thread_exec.start();
 			}
 		} else {
-			status.setText("上一操作尚未执行完毕");
+			status.setText("Last operation is not finished");
 		}
 
 	}
@@ -400,7 +400,7 @@ public class DatabasePanel extends JPanel {
 		Thread thread_Repaindblist = new Thread(new Runnable() {
 			public void run() {// normal
 				try {
-					status.setText("正在连接...请稍等");
+					status.setText("Get data...");
 					String[] dbl = DataBase.getDBs(url, pass, config, type, code);
 					for (int i = 0; i < dbl.length; i++) {
 						choosedb.addItem(dbl[i]);
@@ -422,10 +422,10 @@ public class DatabasePanel extends JPanel {
 
 					// 给menu加载参数
 					DBPopMenu.init_menu(url, pass, config, type, code);
-					status.setText("完成");
+					status.setText("Finished");
 				} catch (Exception e1) {
 					//System.out.println("异常，清空jtree");
-					status.setText("连接数据库失败");
+					status.setText("Connect database failed");
 					root = new DefaultMutableTreeNode("/");
 					root.removeAllChildren();
 					//DefaultTreeModel model = new DefaultTreeModel(root);
@@ -439,14 +439,14 @@ public class DatabasePanel extends JPanel {
 		if (t_locker == 0) {
 			t_locker = 1;
 			if (config.equals("")) {
-				status.setText("请先配置数据库");
+				status.setText("Config database first");
 				t_locker = 0;
 			} else {
 				thread_Repaindblist.start();
 			}
 
 		} else {
-			status.setText("上一次操作尚未执行完毕");
+			status.setText("Last operation is not completed");
 		}
 
 	}

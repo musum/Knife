@@ -38,14 +38,14 @@ public class AddDialog extends JDialog {
 	private JComboBox<String> atype, acode;
 
 	public AddDialog() {
-		super(MainFrame.main, "添加SHELL", true);
+		super(MainFrame.main, "Add", true);
 		this.setComponent();
 		this.setEvent();
 		this.setVisible(true); // 模态对话框必须在添加完组件后设置可见，不然会显示不了。
 	}
 
 	public AddDialog(String s) {
-		super(MainFrame.main, "修改SHELL", true);
+		super(MainFrame.main, "Edit", true);
 		String[] tmp = s.split("\t");
 		this.setComponent();
 		this.setEvent();
@@ -53,7 +53,7 @@ public class AddDialog extends JDialog {
 		urltext.setText(tmp[1]);
 		passtext.setText(tmp[2]);
 		configtext.setText(tmp[3]);
-		button.setText("编辑");
+		button.setText("Edit");
 		atype.setSelectedItem(tmp[4]);
 		acode.setSelectedItem(tmp[5]);
 		this.ip = tmp[6];
@@ -75,9 +75,9 @@ public class AddDialog extends JDialog {
 		north.setLayout(new FlowLayout(FlowLayout.LEFT, 3, 8));
 		center.setLayout(new FlowLayout(FlowLayout.LEFT, 3, 0));
 		south.setLayout(new FlowLayout(FlowLayout.RIGHT, 3, 8));
-		JLabel urllabel = new JLabel("地址:");
+		JLabel urllabel = new JLabel("Url:");
 		urllabel.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 0));
-		JLabel configlabel = new JLabel("配置:");
+		JLabel configlabel = new JLabel("Config:");
 		configlabel.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 0));
 		JLabel actionlabel = new JLabel("");
 		actionlabel.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 0));
@@ -88,10 +88,10 @@ public class AddDialog extends JDialog {
 		// config配置框
 		configtext = new JTextArea();
 		JScrollPane configscroll = new JScrollPane(configtext);
-		button = new JButton("添加");
-		String[] strtype = new String[] { "脚本类型", "ASP(Eval)", "ASPX(Eval)", "PHP(Eval)",
+		button = new JButton("Add");
+		String[] strtype = new String[] { "Type", "ASP(Eval)", "ASPX(Eval)", "PHP(Eval)",
 				"JSP(Eval)", "Customize" };
-		String[] strcode = new String[] { "字符编码", "GB2312", "GBK", "UTF-8",
+		String[] strcode = new String[] { "Encoder", "GB2312", "GBK", "UTF-8",
 				"BIG5", "ISO-8859-1" };
 		atype = new JComboBox<>(strtype);
 		acode = new JComboBox<>(strcode);
@@ -168,12 +168,12 @@ public class AddDialog extends JDialog {
 				
 				
 				
-				if (!type.equals("脚本类型")) {
+				if (!type.equals("Type")) {
 
-					if (code.equals("字符编码")) {
+					if (code.equals("Encoder")) {
 						code = "UTF-8";
 					}
-					if (e.getActionCommand().equals("添加")) {
+					if (e.getActionCommand().equals("Add")) {
 						String sql = "insert into data(url,pass,config,type,code) values('"
 								+ url
 								+ "','"
@@ -187,7 +187,7 @@ public class AddDialog extends JDialog {
 							if (stmt.executeUpdate(sql) < 1) {
 								JOptionPane
 										.showMessageDialog(MainFrame.main,
-												"添加失败", "错误",
+												"Add failed", "Error",
 												JOptionPane.ERROR_MESSAGE);
 								return;
 							}
@@ -215,7 +215,7 @@ public class AddDialog extends JDialog {
 							if (stmt.executeUpdate(sql) < 1) {
 								JOptionPane
 										.showMessageDialog(MainFrame.main,
-												"修改失败", "错误",
+												"Edit failed", "Error",
 												JOptionPane.ERROR_MESSAGE);
 								return;
 							}
@@ -240,8 +240,8 @@ public class AddDialog extends JDialog {
 					setVisible(false);
 
 				} else {
-					JOptionPane.showMessageDialog(MainFrame.main, "请填写脚本类型",
-							"错误", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(MainFrame.main, "Please select a script type",
+							"Error", JOptionPane.ERROR_MESSAGE);
 				}
 
 			}

@@ -139,20 +139,20 @@ public class SymmetricEncoder {
         /*
          * 加密
          */
-        System.out.println("使用AES对称加密，请输入加密的规则");
+        System.out.println("AES encrypt, set encrypt rule");
         String encodeRules=scanner.next();
-        System.out.println("请输入要加密的内容:");
+        System.out.println("Input plantext:");
         String content = scanner.next();
-        System.out.println("根据输入的规则"+encodeRules+"加密后的密文是:"+se.AESEncode(encodeRules, content));
+        System.out.println("Encrypt rule"+encodeRules+" Encrypted content: "+se.AESEncode(encodeRules, content));
        
         /*
          * 解密
          */
-        System.out.println("使用AES对称解密，请输入加密的规则：(须与加密相同)");
+        System.out.println("AES decrypt, set encrypt rule");
         encodeRules=scanner.next();
-        System.out.println("请输入要解密的内容（密文）:");
+        System.out.println("Input encrypted content:");
         content = scanner.next();
-        System.out.println("根据输入的规则"+encodeRules+"解密后的明文是:"+se.AESDncode(encodeRules, content));
+        System.out.println("Encrypt rule"+encodeRules+" Plantext: "+se.AESDncode(encodeRules, content));
     }
 
 }

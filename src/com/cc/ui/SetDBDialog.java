@@ -48,7 +48,7 @@ public class SetDBDialog extends JDialog {
 
 	public SetDBDialog(String[] t) {
 		// TODO Auto-generated constructor stub
-		super(MainFrame.main, "数据库配置", true);
+		super(MainFrame.main, "Database Settings", true);
 		// 初始化布局和控件
 		id = t[0];
 		type = t[4];
@@ -97,10 +97,10 @@ public class SetDBDialog extends JDialog {
 		GBC gbccenter2 = new GBC(1, 1, 2, 2).setFill(GBC.BOTH).setInsets(0, 0, 0, 0);
 
 
-		example = new JLabel("示例");
-		setting = new JLabel("配置");
+		example = new JLabel("Example");
+		setting = new JLabel("Config");
 		dbset = new JTextArea();
-		submit = new JButton("提交");
+		submit = new JButton("Submit");
 		// submit action
 		InitDB action = new InitDB();
 		dbset_scroll = new JScrollPane(dbset);

@@ -62,8 +62,8 @@ public class TextPanel extends JPanel {
 		GBC gbctext = new GBC(0, 1, 6, 1).setFill(GBC.BOTH).setWeight(0, 100);
 		GBC gbcbar = new GBC(0, 2, 6, 1).setFill(GBC.HORIZONTAL).setWeight(100,
 				0);
-		JButton load = new JButton("载入");
-		button = new JButton("保存");
+		JButton load = new JButton("Load");
+		button = new JButton("Save");
 		TextAction action = new TextAction();
 		load.addActionListener(action);
 		button.addActionListener(action);
@@ -71,7 +71,7 @@ public class TextPanel extends JPanel {
 		path = new JTextField();
 		text = new JTextPane();
 		JScrollPane textpane = new JScrollPane(text);
-		status = new JLabel("完成");
+		status = new JLabel("Finished");
 		bar.add(status);
 		bar.setFloatable(false);
 		this.add(path, gbcpath);
@@ -93,9 +93,9 @@ public class TextPanel extends JPanel {
 		@Override
 		public void actionPerformed(final ActionEvent e) {
 			// TODO Auto-generated method stub
-			if (e.getActionCommand().equals("载入")) {
-				text.setText("载入中...");
-				status.setText("正在载入...请稍等");
+			if (e.getActionCommand().equals("Load")) {
+				text.setText("Loading...");
+				status.setText("Loding...");
 				Runnable rrun = new Runnable() {
 					public void run() {
 						final String data = filemanagerpanel.getFm().doAction(
@@ -103,14 +103,14 @@ public class TextPanel extends JPanel {
 						SwingUtilities.invokeLater(new Runnable() {
 							public void run() {
 								text.setText(data);
-								status.setText("载入完成");
+								status.setText("Loaded");
 							}
 						});
 					}
 				};
 				new Thread(rrun).start();
 			} else {
-				status.setText("正在保存...请稍等");
+				status.setText("Saving...");
 				String data;
 				Runnable nrun = new Runnable() {
 					public void run() {
@@ -134,8 +134,8 @@ public class TextPanel extends JPanel {
 								if (filemanagerpanel.isRstatus()) {
 									SwingUtilities.invokeLater(new Runnable() {
 										public void run() {
-											filemanagerpanel.getStatus().setText("保存成功");
-											status.setText("保存成功");
+											filemanagerpanel.getStatus().setText("Saved");
+											status.setText("Save success");
 										}
 									});
 									break;
@@ -145,8 +145,8 @@ public class TextPanel extends JPanel {
 						{
 							SwingUtilities.invokeLater(new Runnable() {
 								public void run() {
-									filemanagerpanel.getStatus().setText("保存失败");
-									status.setText("保存失败");
+									filemanagerpanel.getStatus().setText("Failed");
+									status.setText("Save failed");
 								}
 							});
 						}

@@ -33,8 +33,8 @@ public class ShellPopMenu {
 		c = console;
 		shell_doc = console.getDocument();
 		shellmenu = new JPopupMenu();
-		copy = new JMenuItem("复制");
-		paste = new JMenuItem("粘贴");
+		copy = new JMenuItem("Copy");
+		paste = new JMenuItem("Paste");
 		shellmenu.add(copy);
 		shellmenu.add(paste);
 		p.add(shellmenu);

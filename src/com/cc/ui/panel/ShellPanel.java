@@ -53,7 +53,7 @@ public class ShellPanel extends JPanel {
 		// 控件初始化
 
 		bar = new JToolBar();
-		status = new JLabel("完成");
+		status = new JLabel("Finished");
 		bar.setFloatable(false);
 		console = new JTextPane();
 		console_scroll = new JScrollPane(console);
@@ -94,7 +94,7 @@ public class ShellPanel extends JPanel {
 		core = new Shell(os, url, code, type);
 
 		// /
-		status.setText("正在连接...请稍等");
+		status.setText("Connecting...");
 		Thread thread_getpath = new Thread(new Runnable() {
 			public void run() {
 				// 显示网站路径
@@ -173,10 +173,10 @@ public class ShellPanel extends JPanel {
 			shell_doc.insertString(shell_doc.getLength(), text, null);
 			command_start = shell_doc.getLength();
             console.setCaretPosition(shell_doc.getLength());
-            status.setText("完成");
+            status.setText("Finished");
 		} catch (BadLocationException e) {
 			e.printStackTrace();
-            status.setText("失败");
+            status.setText("Failed");
 		}
 	}
 
@@ -278,7 +278,7 @@ public class ShellPanel extends JPanel {
 						{
 							String k = tmp_cmd.substring(5,tmp_cmd.length());
 							core.SetCMD(k);
-							shell_doc.insertString(shell_doc.getLength(), "\n设置命令路径为:"+k, null);
+							shell_doc.insertString(shell_doc.getLength(), "\nSet shell path:"+k, null);
 							shell_doc.insertString(shell_doc.getLength(), "\n" + path+"", null);
 							command_start = shell_doc.getLength();
 						}
@@ -293,14 +293,14 @@ public class ShellPanel extends JPanel {
 							public void run() {
 								// TODO Auto-generated method stub
 								num_t = 1;
-								status.setText("正在执行...请稍等");
+								status.setText("Excuting...");
 								try {
 									// Thread.sleep(10000);
 									execute(path, shell_doc.getText(command_start, command_stop - command_start), os,
 											type);
 								} catch (Exception e) {
 									// TODO Auto-generated catch block
-									status.setText("执行失败");
+									status.setText("Failed");
 
 									console.setEditable(true);
 								} finally {
@@ -367,11 +367,11 @@ public class ShellPanel extends JPanel {
 			shell_doc.insertString(shell_doc.getLength(), "\n" + path_show, null);
 			command_start = shell_doc.getLength();
 			console.setCaretPosition(shell_doc.getLength());
-			status.setText("完成");
+			status.setText("Finished");
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			status.setText("执行失败");
+			status.setText("Failed");
 			command_start = shell_doc.getLength();
 			console.setCaretPosition(shell_doc.getLength());
 		}

@@ -98,7 +98,7 @@ public class ForceShellPanel extends JPanel {
 		comboBox.setBounds(613, 18, 61, 21);
 		add(comboBox);
 
-		JLabel label = new JLabel("密码文件");
+		JLabel label = new JLabel("Password dict");
 		label.setBounds(17, 49, 54, 15);
 		add(label);
 
@@ -107,7 +107,7 @@ public class ForceShellPanel extends JPanel {
 		filePath.setBounds(81, 46, 522, 21);
 		add(filePath);
 
-		JButton button = new JButton("添加");
+		JButton button = new JButton("Add");
 		button.addActionListener(new ActionListener() {
 			//
 			public void actionPerformed(ActionEvent e) {
@@ -119,7 +119,7 @@ public class ForceShellPanel extends JPanel {
 		
 		
 		
-		JButton clearButton = new JButton("清空");
+		JButton clearButton = new JButton("Clean");
 		clearButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				clearMsg(e);
@@ -128,7 +128,7 @@ public class ForceShellPanel extends JPanel {
 
 		clearButton.setBounds(787, 17, 93, 23);
 		add(clearButton);
-		JButton startButton = new JButton("开始");
+		JButton startButton = new JButton("Start");
 		startButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				startButtonAction(e);
@@ -164,11 +164,11 @@ public class ForceShellPanel extends JPanel {
 	// 清空按钮事件
 	public void clearMsg(java.awt.event.ActionEvent evt) {
 		// 清空所有消息
-		changeStatus("清理密码信息...");
+		changeStatus("Cleaning...");
 		list.clear();
 		textArea.setText(""); // 清空消息域中的内容
 		filePath.setText(""); // 清空filepath中路径
-		changeStatus("清理密码信息完成");
+		changeStatus("Finished");
 
 	}
 
@@ -185,7 +185,7 @@ public class ForceShellPanel extends JPanel {
 		// 说明文件里面没有任何东西 
 		if (list.size()<1){
 			JOptionPane.showMessageDialog(null,
-					"密码字典为空", "提示", JOptionPane.INFORMATION_MESSAGE);
+					"pass dict is empty", "Info", JOptionPane.INFORMATION_MESSAGE);
 			return;
 		}
 
@@ -193,7 +193,7 @@ public class ForceShellPanel extends JPanel {
 		// 当选择的参数大于1000的时候 给出提示框
 		if(quantity >1000){
 			int button = JOptionPane.showConfirmDialog(MainFrame.main,
-					"发送参数并非越大越好,请根据情况自己调节!\n是否继续", "提示", JOptionPane.YES_NO_OPTION);
+					"Too many thread!\nJust continue", "Info", JOptionPane.YES_NO_OPTION);
 			if (button == 0) { // 如果选是
 			}else{ //选否的话不做任何处理
 				return ;
@@ -234,16 +234,16 @@ public class ForceShellPanel extends JPanel {
 		filepath = filepath.trim();
 		// 如果长度为0 那么表示没有字典文件 弹出警告
 		if (filepath.length() == 0) {
-			changeTextArea("没有选择密码文件",true);
+			changeTextArea("No pass dict",true);
 			return;
 		}
-		changeTextArea("正在加载密码文件...",true);
+		changeTextArea("Loading pass dict...",true);
 		ReadFromFile.readFileByLines(filepath);
 		int i = list.size();
 
-		System.out.println("文件加载完毕");
+		System.out.println("Loaded");
 		String listsize = String.valueOf(i);
-		changeTextArea("密码共 " + listsize + " 个",true);
+		changeTextArea("Total count " + listsize + " ",true);
 
 	}
 	/**
@@ -259,26 +259,26 @@ public class ForceShellPanel extends JPanel {
 	// 如果把文件拖动到地址框里面去 那么直接刷新内容框
 	public static synchronized void callBack() {
 		readFile();
-		changeStatus("密码文件加载完成");
+		changeStatus("Pass dict loaded");
 	}
 
 	// 浏览按钮点击事件
 	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
 		this.filePath.setText(reFileAbso());
 		readFile();
-		changeStatus("密码文件加载完成");
+		changeStatus("Pass dict loaded");
 	}
 
 	// 点击浏览按钮逻辑处理事件
 	private String reFileAbso() {
 		JFileChooser jfc = new JFileChooser();
 		jfc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-		jfc.showDialog(new JLabel(), "选择");
+		jfc.showDialog(new JLabel(), "Select");
 		File file = jfc.getSelectedFile();
 		if(null != file){
 			if (file.isDirectory()) {
-				System.out.println("文件夹:" + file.getAbsolutePath());
-				return "二货,不要选文件夹 要选文件";
+				System.out.println("Folder:" + file.getAbsolutePath());
+				return "No folder, Only file";
 				// return file.getAbsolutePath();
 				// this.jTextField1.setText(file.getAbsolutePath());
 			} else if (file.isFile()) {
@@ -296,7 +296,7 @@ public class ForceShellPanel extends JPanel {
 	 */
 	public void forcePassword() {
 		long startTime = System.currentTimeMillis();
-		changeStatus("正在进行破解...");
+		changeStatus("Cracking...");
 		// 密码文件大小
 		int listsize = list.size();
 		// 每1000个分一组
@@ -317,7 +317,7 @@ public class ForceShellPanel extends JPanel {
 			passwordList = new ArrayList(
 					list.subList(count, (count + quantity) > list.size() ? list.size() : count + quantity));
 			step++;
-			changeTextArea("正在破解第"+String.valueOf(step)+"组",true);
+			changeTextArea("Crack "+String.valueOf(step)+"group",true);
 //			System.out.println(this.getClass().getName()+" 275 ");
 			String msg = HttpRequestUtil.realyPost(urls, passwordList,type);
 			
@@ -336,7 +336,7 @@ public class ForceShellPanel extends JPanel {
 		long endTime = System.currentTimeMillis();
 		long Times = endTime - startTime;
 		String strTimes = String.valueOf(Times);
-		changeTextArea("破解完成" + " 共耗时" + " " + strTimes + " 毫秒",true);
+		changeTextArea("Crack finished." + " Time total" + " " + strTimes + " ms",true);
 		//statusLable.setText("破解完成" + " 共耗时" + " " + strTimes + " 毫秒");
 		
 

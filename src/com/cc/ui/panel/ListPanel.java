@@ -58,7 +58,7 @@ public class ListPanel extends JPanel {
 
 		JPasswordField pw = new JPasswordField();
 		pw.setEchoChar('-');
-		JOptionPane.showMessageDialog(null,pw,"请输入密码",JOptionPane.PLAIN_MESSAGE);
+		JOptionPane.showMessageDialog(null,pw,"Please input password",JOptionPane.PLAIN_MESSAGE);
 		String s = pw.getText();
 		InitConfig.kiss = s;
 	}
@@ -94,7 +94,7 @@ public class ListPanel extends JPanel {
 		}
 		JToolBar bar = new JToolBar();
 		bar.setFloatable(false);
-		status = new JLabel("完成");
+		status = new JLabel("Finished");
 		JScrollPane listPane = new JScrollPane(list);
 		new ListPopMenu(this, listPane);
 		new ListPopMenu(this, list);

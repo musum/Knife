@@ -58,7 +58,7 @@ public class MyTextField  extends JTextField implements DropTargetListener {
                     	this.setText(f.getAbsolutePath());
                     	ForceShellPanel.callBack();
                     }else{
-                    	this.setText("请选择文件 ");
+                    	this.setText("Select file ");
                     
                     }
                 }

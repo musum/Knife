@@ -31,8 +31,8 @@ public class RequestPanel extends JPanel{
 		contentPanel.add(scontent);
 		JPanel buttonPanel = new JPanel();
 		ButtonGroup group = new ButtonGroup();
-		open = new JRadioButton("开启");
-		close = new JRadioButton("关闭");
+		open = new JRadioButton("Open");
+		close = new JRadioButton("Close");
 		group.add(open);
 		group.add(close);
 		Configuration config = new Configuration();
@@ -46,8 +46,8 @@ public class RequestPanel extends JPanel{
 			close.setSelected(true);
 		}
 		content.setText(data);
-		JButton ok = new JButton("确定");
-		JButton cancle = new JButton("取消");
+		JButton ok = new JButton("OK");
+		JButton cancle = new JButton("Cancle");
 		buttonPanel.add(open);
 		buttonPanel.add(close);
 		buttonPanel.add(ok);
@@ -80,7 +80,7 @@ public class RequestPanel extends JPanel{
 			config.setValue("REQUEST_STATUS", status);
 			Common.map.clear();	// 静态Map，如果不清空，则会一直往Map里注入数据。
 			Common.getData();
-			JOptionPane.showMessageDialog(ConfigDialog.cdialog, "请求头设置成功", "提示", JOptionPane.DEFAULT_OPTION);
+			JOptionPane.showMessageDialog(ConfigDialog.cdialog, "Set headers ok", "Info", JOptionPane.DEFAULT_OPTION);
 		}
 		
 	}

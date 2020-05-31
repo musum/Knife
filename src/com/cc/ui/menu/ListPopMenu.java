@@ -46,10 +46,10 @@ public class ListPopMenu extends JPopupMenu {
 		pop = this;
 		this.listPane.addMouseListener(new MouseAction());
 		MenuAction action = new MenuAction();
-		add = new JMenuItem("添加");
-		JMenu skins = new JMenu("皮肤");
-		about = new JMenuItem("关于");
-		config = new JMenuItem("设置");
+		add = new JMenuItem("Add");
+		JMenu skins = new JMenu("Skin");
+		about = new JMenuItem("About");
+		config = new JMenuItem("Setting");
 		LookAndFeelInfo[] looks = UIManager.getInstalledLookAndFeels();
 		ButtonGroup group = new ButtonGroup();
 		JCheckBoxMenuItem gskin = new JCheckBoxMenuItem("Graphite");
@@ -92,11 +92,11 @@ public class ListPopMenu extends JPopupMenu {
 		pop = this;
 		this.list.addMouseListener(new SelectedMouseAction());
 		MenuAction action = new MenuAction();
-		filemanager = new JMenuItem("文件管理");
-		database = new JMenuItem("数据库管理");
-		shell = new JMenuItem("模拟终端");
-		headconfig = new JMenuItem("请求头设置");
-		forceshell = new JMenuItem("破解shell");
+		filemanager = new JMenuItem("FileManager");
+		database = new JMenuItem("DatabaseManager");
+		shell = new JMenuItem("VirtualTerminal");
+		headconfig = new JMenuItem("CustomHeaders");
+		forceshell = new JMenuItem("CrackShell");
 		database.addActionListener(action);
 		filemanager.addActionListener(action);
 		shell.addActionListener(action);
@@ -108,10 +108,10 @@ public class ListPopMenu extends JPopupMenu {
 		this.add(headconfig);
 		this.add(forceshell);
 		this.addSeparator();
-		add = new JMenuItem("添加");
-		edit = new JMenuItem("编辑");
-		delete = new JMenuItem("删除");
-		config = new JMenuItem("设置");
+		add = new JMenuItem("Add");
+		edit = new JMenuItem("Edit");
+		delete = new JMenuItem("Delete");
+		config = new JMenuItem("Setting");
 		
 		this.add(add);
 		this.add(edit);
@@ -192,7 +192,7 @@ public class ListPopMenu extends JPopupMenu {
 				AddDialog edit = new AddDialog(getOne(list));
 			} else if (e.getSource() == delete) {
 				int button = JOptionPane.showConfirmDialog(MainFrame.main,
-						"确认删除？", "提示", JOptionPane.YES_NO_OPTION);
+						"Delete this one？", "Info", JOptionPane.YES_NO_OPTION);
 				if (button == 0) {
 					Statement stmt = DbDao.getInstance().getStmt();
 					try {
@@ -200,7 +200,7 @@ public class ListPopMenu extends JPopupMenu {
 						stmt.executeUpdate("delete from data where id=" + id);
 						ListPanel listpanel= (ListPanel)MainFrame.tab.getSelectedComponent();
 						listpanel.getModel().remove(id);
-						listpanel.getStatus().setText("删除成功");
+						listpanel.getStatus().setText("Deleted");
 					} catch (SQLException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();

@@ -22,7 +22,7 @@ public class MessageDialog extends JDialog {
 
 	public MessageDialog(String message,int time) {
 		//super(MainFrame.main, time+"秒后自动关闭窗口", true);
-		super(MainFrame.main,"消息",true);
+		super(MainFrame.main,"Info",true);
 		this.i = time;
 		Toolkit t = Toolkit.getDefaultToolkit();
 		Dimension d = t.getScreenSize();

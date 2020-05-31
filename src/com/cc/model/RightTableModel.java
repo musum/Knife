@@ -56,11 +56,11 @@ public class RightTableModel extends AbstractTableModel {
 		// TODO Auto-generated constructor stub
 		datas = new Vector<Vector>();
 		title = new Vector<String>();
-		title.add("是否");
-		title.add("文件");
-		title.add("时间");
-		title.add("大小");
-		title.add("属性");
+		title.add("YoN");
+		title.add("File");
+		title.add("Time");
+		title.add("Size");
+		title.add("Attr");
 		for (String tmp : filedicts) {
 			String[] s = null;
 			String[] t = tmp.split("\t");
@@ -173,14 +173,14 @@ public class RightTableModel extends AbstractTableModel {
 						list.setRowSelectionInterval(row,row);
 						Rectangle rect = list.getCellRect(row, 0, true);
 						list.scrollRectToVisible(rect);
-						filemanagerpanel.getStatus().setText("目录已存在");
+						filemanagerpanel.getStatus().setText("Dir existed");
 					} else {
 						final String np = path + aValue.toString() + Safe.SYSTEMSP;
 						Runnable newrun = new Runnable() {
 							public void run() {
 								ret = "-1";
 								filemanagerpanel.getStatus().setText(
-										"正在新建文件夹...请稍等");
+										"Creating new folder...");
 								ret = filemanagerpanel.getFm().doAction("newdict",
 										np);
 								SwingUtilities.invokeLater(new Runnable() {
@@ -198,11 +198,11 @@ public class RightTableModel extends AbstractTableModel {
 											int row = getRowCount()-1;
 											filemanagerpanel.getList().setRowSelectionInterval(row, row);
 											filemanagerpanel.getStatus().setText(
-													"新建文件夹成功");
+													"New folder created");
 										} else {
 											remove(getRowCount() - 1);
 											filemanagerpanel.getStatus().setText(
-													"新建文件夹失败");
+													"Create folder failed");
 										}
 									}
 								});
@@ -219,7 +219,7 @@ public class RightTableModel extends AbstractTableModel {
 				Runnable rerun = new Runnable() {
 					public void run() {
 						ret = "-1";
-						filemanagerpanel.getStatus().setText("正在重命名...请稍等");
+						filemanagerpanel.getStatus().setText("Renaming...");
 						ret = filemanagerpanel.getFm().doAction("rename", op, np);
 						SwingUtilities.invokeLater(new Runnable() {
 							public void run() {
@@ -236,10 +236,10 @@ public class RightTableModel extends AbstractTableModel {
 										filemanagerpanel.getList().setRowSelectionInterval(rowIndex,rowIndex);
 									} catch (Exception e) {
 									} finally {
-										filemanagerpanel.getStatus().setText("重命名成功");
+										filemanagerpanel.getStatus().setText("Rename succed");
 									}
 								} else {
-									filemanagerpanel.getStatus().setText("重命名失败");
+									filemanagerpanel.getStatus().setText("Rename failed");
 								}
 							}
 						});

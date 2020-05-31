@@ -27,7 +27,7 @@ public class ReadFromFile {
         File file = new File(fileName);
         InputStream in = null;
         try {
-            System.out.println("以字节为单位读取文件内容，一次读一个字节：");
+            System.out.println("Read file one byte：");
             // 一次读一个字节
             in = new FileInputStream(file);
             int tempbyte;
@@ -40,7 +40,7 @@ public class ReadFromFile {
             return;
         }
         try {
-            System.out.println("以字节为单位读取文件内容，一次读多个字节：");
+            System.out.println("Read file many bytes：");
             // 一次读多个字节
             byte[] tempbytes = new byte[100];
             int byteread = 0;
@@ -69,7 +69,7 @@ public class ReadFromFile {
         File file = new File(fileName);
         Reader reader = null;
         try {
-            System.out.println("以字符为单位读取文件内容，一次读一个字节：");
+            System.out.println("Read file one byte：");
             // 一次读一个字符
             reader = new InputStreamReader(new FileInputStream(file));
             int tempchar;
@@ -86,7 +86,7 @@ public class ReadFromFile {
             e.printStackTrace();
         }
         try {
-            System.out.println("以字符为单位读取文件内容，一次读多个字节：");
+            System.out.println("Read file many bytes：");
             // 一次读多个字符
             char[] tempchars = new char[30];
             int charread = 0;
@@ -128,7 +128,7 @@ public class ReadFromFile {
         int line = 1;
         BufferedReader reader = null;
         try {
-            System.out.println("以行为单位读取文件内容，一次读一整行：");
+            System.out.println("Read a line：");
             reader = new BufferedReader(new FileReader(file));
             String tempString = null;
            
@@ -166,7 +166,7 @@ public class ReadFromFile {
     public static void readFileByRandomAccess(String fileName) {
         RandomAccessFile randomFile = null;
         try {
-            System.out.println("随机读取一段文件内容：");
+            System.out.println("Read random content：");
             // 打开一个随机访问文件流，按只读方式
             randomFile = new RandomAccessFile(fileName, "r");
             // 文件长度，字节数
@@ -199,7 +199,7 @@ public class ReadFromFile {
      */
     private static void showAvailableBytes(InputStream in) {
         try {
-            System.out.println("当前字节输入流中的字节数为:" + in.available());
+            System.out.println("Current input stream byte count:" + in.available());
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -64,7 +64,7 @@ public class DBPopMenu extends JPopupMenu {
 		
 		//数据库名右键菜单:显示表信息
 		dbmenu = new JPopupMenu();
-		showtable = new JMenuItem("查看表信息");
+		showtable = new JMenuItem("Show tables");
 		dbmenu.add(showtable);
 		tree = tr;
 		DoAction action = new DoAction();
@@ -72,7 +72,7 @@ public class DBPopMenu extends JPopupMenu {
 
 		//数据库表名右键菜单
 		dbmenu2 = new JPopupMenu();
-		countnum = new JMenuItem("获取表行数");
+		countnum = new JMenuItem("Show data count");
 		countnum.addActionListener(action);
 
 		dbmenu2.add(countnum);
@@ -85,11 +85,11 @@ public class DBPopMenu extends JPopupMenu {
 		//数据库结果列表右键菜单
 		dbmenu3 = new JPopupMenu();
 		// System.out.println("t2");
-		copysingle = new JMenuItem("复制");
+		copysingle = new JMenuItem("Copy");
 		copysingle.addActionListener(action);
-		copyline = new JMenuItem("复制整行");
+		copyline = new JMenuItem("Copy a line");
 		copyline.addActionListener(action);
-		outfile = new JMenuItem("导出");
+		outfile = new JMenuItem("Export");
 		outfile.addActionListener(action);
 
 		dbmenu3.add(copysingle);
@@ -172,7 +172,7 @@ public class DBPopMenu extends JPopupMenu {
 									tree.expandRow(tree.getLeadSelectionRow());
 								}
 							});
-							jlabel_status.setText("执行完毕");
+							jlabel_status.setText("Finish");
 							status = true;
 						}
 					});
@@ -193,7 +193,7 @@ public class DBPopMenu extends JPopupMenu {
 									String name = "test.txt";
 									FileManagerPanel filemanagerpanel = null;
 									JFileChooser downch = new JFileChooser(".");
-									downch.setDialogTitle("导出内容");
+									downch.setDialogTitle("Export content");
 									downch.setSelectedFile(new File(name));
 									int select = downch.showSaveDialog(filemanagerpanel);
 									if (select == JFileChooser.APPROVE_OPTION) {
@@ -215,10 +215,10 @@ public class DBPopMenu extends JPopupMenu {
 												bw.newLine();
 											}
 											bw.close();
-											jlabel_status.setText("导出成功");
+											jlabel_status.setText("Export success");
 											status = true;
 										} catch (Exception e1) {
-											filemanagerpanel.getStatus().setText("导出失败");
+											filemanagerpanel.getStatus().setText("Export fail");
 											status = true;
 										}
 									}
@@ -250,7 +250,7 @@ public class DBPopMenu extends JPopupMenu {
 								clipboard = MainFrame.main.getToolkit().getSystemClipboard();
 								Transferable tText = new StringSelection(k);
 								clipboard.setContents(tText, null);
-								jlabel_status.setText("复制完毕");
+								jlabel_status.setText("Copy OK");
 								status = true;
 							} catch (Exception e1) {
 								// System.out.println("copy failed");
@@ -290,7 +290,7 @@ public class DBPopMenu extends JPopupMenu {
 								clipboard = MainFrame.main.getToolkit().getSystemClipboard();
 								Transferable tText = new StringSelection(k);
 								clipboard.setContents(tText, null);
-								jlabel_status.setText("复制完毕");
+								jlabel_status.setText("Copy OK");
 								status = true;
 							} catch (Exception e1) {
 								status = true;
@@ -327,7 +327,7 @@ public class DBPopMenu extends JPopupMenu {
 								public void run() {
 									// TODO Auto-generated method stub
 									UpdateData(re);
-									jlabel_status.setText("执行完毕");
+									jlabel_status.setText("Finished");
 									status = true;
 								}
 
@@ -345,7 +345,7 @@ public class DBPopMenu extends JPopupMenu {
 
 				}
 			} else {
-				jlabel_status.setText("上一操作尚未执行完毕");
+				jlabel_status.setText("Last opration is not finished");
 			}
 		}
 

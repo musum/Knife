@@ -171,9 +171,9 @@ public class FileManagerPanel extends JPanel {
 		model.setRoot(new DefaultMutableTreeNode(""));// 先初始化根节点，不初始化会显示更多的组件自带内容
 		tree.setVisible(false);// 先隐藏，再最后更新的时候再显示出来，就不会看到初始化的节点，就是完全空白的，美观。
 		tree.setShowsRootHandles(true);
-		read = new JButton("读取");
+		read = new JButton("Read");
 		bar = new JToolBar();
-		status = new JLabel("完成");
+		status = new JLabel("Finish");
 		String[] tmp = MainFrame.tab.getUrl().split("\t");
 		id = tmp[0];
 		url = tmp[1];
@@ -204,8 +204,8 @@ public class FileManagerPanel extends JPanel {
 		} catch (SQLException e) {
 		}
 		fm = new FileManager(url, pass, type, code);
-		this.path.setText("正在连接...请稍等");
-		this.status.setText("正在载入路径...请稍等");
+		this.path.setText("Connecting...");
+		this.status.setText("Loading path...");
 		Runnable run = new Runnable() {
 			public void run() {
 				arrtmp = fm.doAction("readindex");
@@ -215,8 +215,8 @@ public class FileManagerPanel extends JPanel {
 						&& arrtmp.indexOf("\\") < 0) {
 					SwingUtilities.invokeLater(new Runnable() {
 						public void run() {
-							path.setText("连接失败");
-							status.setText("载入路径失败");
+							path.setText("Connect failed");
+							status.setText("Load path failed");
 							new MessageDialog(arrtmp,5);
 						}
 					});
@@ -314,7 +314,7 @@ public class FileManagerPanel extends JPanel {
 				TreeSelectionModel.SINGLE_TREE_SELECTION);
 		Runnable run = new Runnable() {
 			public void run() {
-				status.setText("正在载入左边栏...请稍等");
+				status.setText("Loading left pannel...");
 				trees = fm.makeleft(webroot);
 				final String search;
 				final String[] tmp2;
@@ -330,7 +330,7 @@ public class FileManagerPanel extends JPanel {
 						TreeMethod.makeIndexTree(tmp2, trees,
 								TreeMethod.searchNode(root, search),tree);
 						TreeMethod.expandAll(tree, new TreePath(root), true);
-						status.setText("正在载入右边栏...请稍等");
+						status.setText("Loading right pannel");
 						showRight(webroot, list);
 					}
 				});
@@ -368,7 +368,7 @@ public class FileManagerPanel extends JPanel {
 						JTableHeader header = list.getTableHeader();
 						header.setDefaultRenderer(renderer);
 						if (init) {
-							status.setText("完成");
+							status.setText("Completed");
 							init = false;
 						}
 						rstatus = true;
@@ -418,7 +418,7 @@ public class FileManagerPanel extends JPanel {
 				if (tp != null) {
 					lstatus = false;
 					rstatus = false;
-					status.setText("正在读取...请稍等");
+					status.setText("Get data...");
 					showLeft(tp);
 					showRight(TreeMethod.makePath(tp), list);
 					path.setText(TreeMethod.makePath(tp));
@@ -430,7 +430,7 @@ public class FileManagerPanel extends JPanel {
 									SwingUtilities.invokeLater(new Runnable() {
 										@Override
 										public void run() {
-											status.setText("完成");
+											status.setText("Finished");
 										}
 									});
 									break;
@@ -442,7 +442,7 @@ public class FileManagerPanel extends JPanel {
 				}
 			} else {
 //				 new MessageDialog("上一操作尚未执行完毕");		
-				status.setText("上一操作尚未执行完毕");
+				status.setText("Last operation is not completed");
 				DefaultTreeSelectionModel dsmodel = new DefaultTreeSelectionModel();
 				dsmodel.setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
 				dsmodel.setSelectionPath(e.getOldLeadSelectionPath());

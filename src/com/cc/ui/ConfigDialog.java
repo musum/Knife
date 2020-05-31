@@ -13,7 +13,7 @@ import com.cc.ui.config.panel.RequestPanel;
 public class ConfigDialog extends JDialog{
 	public static ConfigDialog cdialog;
 	public ConfigDialog() {
-		super(MainFrame.main,"圈子菜刀 设置",true);
+		super(MainFrame.main,"CCKnife Settings",true);
 		//this.setComponent();
 		cdialog = this;
 		this.setVisible(true);
@@ -23,7 +23,7 @@ public class ConfigDialog extends JDialog{
 	 * @param flag 0  按照原来顺序显示 1 优先显示请求头配置
 	 */
 	public ConfigDialog(String flag) {
-		super(MainFrame.main,"圈子菜刀 设置",true);
+		super(MainFrame.main,"CCKnife Settings",true);
 		this.setComponent(flag);
 		cdialog = this;
 		this.setVisible(true);
@@ -39,8 +39,8 @@ public class ConfigDialog extends JDialog{
 				(d.height - this.getHeight()) / 2);
 		this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		JTabbedPane pane = new JTabbedPane();
-		pane.addTab("代理", new ProxyPanel());
-		pane.addTab("请求头", new RequestPanel());
+		pane.addTab("Proxy Settings", new ProxyPanel());
+		pane.addTab("Custom Headers", new RequestPanel());
 		
 		// 如果是直接设置请求头 则默认显示设置请求头
 		if(flag ==  "1"){

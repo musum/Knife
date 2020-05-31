@@ -39,25 +39,25 @@ public class ProxyPanel extends JPanel{
 		GBC gbcok = new GBC(2,4,1,1).setInsets(10, 5, 0, 0);
 		GBC gbccancle = new GBC(3,4,1,1).setInsets(10, 5, 0, 0);
 		Dimension dim = new Dimension(200, 23);
-		JLabel lhost = new JLabel("地址:");
+		JLabel lhost = new JLabel("HOST:");
 		host = new JTextField();
 		host.setPreferredSize(dim);
-		JLabel lport = new JLabel("端口:");
+		JLabel lport = new JLabel("PORT:");
 		port = new JTextField();
 		port.setPreferredSize(dim);
-		JLabel luser = new JLabel("用户名:");
+		JLabel luser = new JLabel("User:");
 		user = new JTextField();
 		user.setPreferredSize(dim);
-		JLabel lpass = new JLabel("密码:");
+		JLabel lpass = new JLabel("Pass:");
 		pass = new JTextField();
 		pass.setPreferredSize(dim);
-		JLabel ltype = new JLabel("类型:");
+		JLabel ltype = new JLabel("Type:");
 		type = new JComboBox<String>();
 		type.addItem("SOCKS");
 		type.addItem("HTTP");
 		type.addItem("DIRECT");
-		JButton ok = new JButton("确定");
-		JButton cancle = new JButton("取消");
+		JButton ok = new JButton("OK");
+		JButton cancle = new JButton("Cancle");
 		cancle.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ConfigDialog.cdialog.hide();
@@ -113,7 +113,7 @@ public class ProxyPanel extends JPanel{
 			config.setValue("PROXY_PASS", spass);
 			config.setValue("PROXY_TYPE", stype);
 			config.setValue("PROXY_STATUS", sstatus);
-			JOptionPane.showMessageDialog(ConfigDialog.cdialog, "代理设置成功", "提示", JOptionPane.DEFAULT_OPTION);
+			JOptionPane.showMessageDialog(ConfigDialog.cdialog, "Set proxy OK", "Info", JOptionPane.DEFAULT_OPTION);
 		}
 	}
 }
